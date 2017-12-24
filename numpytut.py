@@ -6,6 +6,14 @@ help(np.ndarray.size) #total number of elements
 help(np.ndarray.dtype)
 help(np.ndarray.itemsize)
 
+#DATA TYPES IN NUMPY
+np.int16
+np.int32
+np.float
+np.bool
+np.complex
+np.str
+
 a = np.arange(15).reshape(3,5)
 print a
 print a.shape
@@ -106,6 +114,8 @@ m = a.dot(b)    #gives the smaller dimension out, here shape: 1x1
 
 m = np.outer(a,b) #this is the outer product
                   #gives the smaller dimension out, here shape: 5x5
+
+
 #Since operations are carried out element wise ones
 #can use the operators like +=, -=, /= and *=
 a+=2
@@ -167,7 +177,8 @@ a.cumsum(axis=0)
 np.sqrt(25) #to get sqrt
 np.exp(2) #to get exponential of num or matrices
 np.add(2,3) #to add two numbers or matrices
-
+np.rad2deg(1.5)
+np.radians(90)
 #Apply a function over axis
 #np.apply(func, array, axes)
 np.apply_over_axes(np.sum, a,0)
@@ -279,3 +290,35 @@ print a[a>4]
 
 a.transpose() # same as a.T
 np.linalg.inv(a) #should be a square
+
+
+#Readind Array from string
+import StringIO from StringIO
+data = "1, 2, 3\n 4, 5, 6"
+np.genfromtxt(StringIO(data), delimiter=",")
+data = " 1 2 3\n 4 5 67\n890123 4"
+np.genfromtxt(StringIO(data), delimiter=3)
+
+#SAVING NUMPY ARRAY
+#np.save(file, arr, allow_pickle=True, fix_imports=True) #ONLY SAVES ONE ARRAY AT A TIME
+#np.savez(file, *args, **kwds)  SAVES IN .npy FORMAT, MANY ARRAY CAN BE SAVED 
+#np.savez_compressed(file, *args, **kwds) SAVES IN .npz FORMAT
+#np.savetxt(fname, arr, fmt='%.18e', delimiter=' ', newline='\n',
+# header='', footer='', comments='# ')
+
+
+
+#LOADING NUMPY ARRAY
+#np.load(file, mmap_mode=None, allow_pickle=True, fix_imports=True, encoding='ASCII')
+
+
+#Example
+from tempfile import TemporaryFile
+outfile = TemporaryFile()
+x = np.arange(10)
+y = np.sin(x)
+np.savez(outfile, x, y)
+outfile.seek(0) # Only needed here to simulate closing & reopening file
+npzfile = np.load(outfile)
+print npzfile.files
+npzfile[npzfile.files[0]]
