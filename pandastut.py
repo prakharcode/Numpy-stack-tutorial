@@ -31,8 +31,8 @@ For example, with tabular data (DataFrame) it is more semantically helpful to th
 import pandas as pd
 import numpy as np
 
-#axis 0 is used to refer to columns
-#dimension and 1 for rows
+#axis 0 is used to refer column-wise iteration
+#and 1 for row-wise
 
 
 # +------------+---------+--------+
