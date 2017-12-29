@@ -153,7 +153,9 @@ df = pd.read_csv('file', header=0 )
 
 #READING HTML CONTENT
 #The top-level read_html() function can accept an HTML string/file/URL
-#and will parse HTML tables into list of pandas DataFrames.
+#and will parse HTML tables into LIST OF DATAFRAMES.
+
+#TO APPLY PANDAS OPERATION SELECT A DATAFRAME FROM THAT LIST
 
 # url = 'http://www.fdic.gov/bank/individual/failed/banklist.html'
 # df = pd.read_html(url)
