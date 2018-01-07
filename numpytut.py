@@ -35,6 +35,8 @@ print type(a)
 c = np.array( [ [1,2], [3,4] ], dtype=complex ) #array with complex number
 f = np.array([[1,2],[3,4]], dtype=float)# array with float dtype
 
+#to change data types of arrays use np,array.astype(<fill the data typr>)
+
 #to create range of number np has arange method
 #similar to range
 r = np.arange(10,30)
