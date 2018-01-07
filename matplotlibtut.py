@@ -40,6 +40,8 @@ def f(t):
 t1 = np.arange(0.0, 5.0, 0.1)
 t2 = np.arange(0.0, 5.0, 0.02)
 
+#one can alsp use np.linspace to get x range for function, useful for function graphing
+
 plt.figure(1)
 plt.subplot(211)
 plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
