@@ -497,6 +497,8 @@ df1.idxmax(axis=1)
 # axis argument
 print df1.apply(np.mean,axis=1)
 
+#apply return a dataframe ASSIGN TO DATABASE
+
 ##################################AGGEREGATION API###################################################
 # The aggregation API allows one to express possibly multiple aggregation operations in a
 # single concise way.
